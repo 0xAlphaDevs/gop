@@ -1,101 +1,125 @@
-import Image from "next/image";
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { useCallback } from "react"
+import Particles from "react-tsparticles"
+import { loadSlim } from "tsparticles-slim"
+import type { Engine } from "tsparticles-engine"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine)
+  }, [])
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-black text-white flex flex-col relative overflow-hidden">
+      {/* Particles Background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        className="absolute inset-0 z-0"
+        options={{
+          background: {
+            color: {
+              value: "#000000",
+            },
+          },
+          fpsLimit: 90,
+          particles: {
+            color: {
+              value: "#10b981",
+            },
+            links: {
+              color: "#10b981",
+              distance: 150,
+              enable: true,
+              opacity: 0.3,
+              width: 1,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outModes: {
+                default: "bounce",
+              },
+              random: true,
+              speed: 0.7,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 400,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.6,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              value: { min: 1, max: 3 },
+            },
+          },
+          detectRetina: true,
+        }}
+      />
+
+      {/* Header */}
+      <header className="w-full py-6 px-4 sm:px-8 relative z-10">
+        <div className="flex items-center justify-between">
+          <nav className="flex items-center space-x-8">
+            <Link href="/" className="text-lg hover:text-green-400 transition-colors">
+              Home
+            </Link>
+            <Link href="/docs" className="text-lg hover:text-green-400 transition-colors">
+              Docs
+            </Link>
+          </nav>
+
+          <Button className="rounded-[10px] text-xl bg-green-500 text-black hover:bg-green-400">
+            <Image src="/telegram.svg" alt="GOP Logo" width={34} height={34} className="" />
+            Get Started</Button>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1 flex flex-col md:flex-row items-center px-4 sm:px-8 py-10 md:py-0 relative z-10">
+        <div className="md:w-1/2 space-y-6 md:space-y-8 max-w-xl">
+          <div>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif tracking-tighter">Game of Pots</h1>
+            <h4 className=" text-green-500 md:pl-4 pl-2">Powered by Ethena&apos;s USDe</h4>
+          </div>
+          <p className="text-gray-400 max-w-md text-sm sm:text-base">
+            Stake pots together in your Telegram group. Share alpha, compete, and win against your friends.
+          </p>
+
+          <div className="pt-4">
+            <Button className="rounded-[10px] text-xl bg-green-500 text-black hover:bg-green-400">
+              <Image src="/telegram.svg" alt="GOP Logo" width={34} height={34} className="" />
+              Get Started</Button>
+          </div>
+
+          <div className="pt-8">
+            <Link href="https://x.com/gopdotfun" target="_blank" className="text-green-500 hover:text-green-400 transition-colors">
+              <Image src="/x.svg" alt="GOP Logo" width={34} height={34} className="" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="md:w-1/2 h-full flex items-center justify-center mt-16 md:mt-0 pointer-events-none">
+          {/* This is an empty div that helps with layout on mobile */}
+          <div className="w-full max-w-lg aspect-square md:hidden"></div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-[1]"></div>
     </div>
-  );
+  )
 }
+
