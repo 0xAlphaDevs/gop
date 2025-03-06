@@ -85,7 +85,7 @@ export default function Home() {
               Home
             </Link>
             <Link
-              href="/docs"
+              href="https://docs.gameofpots.fun/"
               className={cn(
                 "text-lg hover:text-green-400 transition-colors",
                 cinzel500.className
