@@ -7,6 +7,8 @@ import { useCallback } from "react"
 import Particles from "react-tsparticles"
 import { loadSlim } from "tsparticles-slim"
 import type { Engine } from "tsparticles-engine"
+import { cinzel } from "@/components/ui/fonts"
+import { cn } from "@/lib/utils"
 
 export default function Home() {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -91,7 +93,7 @@ export default function Home() {
       <main className="flex-1 flex flex-col md:flex-row items-center px-4 sm:px-8 py-10 md:py-0 relative z-10">
         <div className="md:w-1/2 space-y-6 md:space-y-8 max-w-xl">
           <div>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif tracking-tighter">Game of Pots</h1>
+            <h1 className={cn("text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-serif tracking-tighter", cinzel.className)}>Game of Pots</h1>
             <h4 className=" text-green-500 md:pl-4 pl-2">Powered by Ethena&apos;s USDe</h4>
           </div>
           <p className="text-gray-400 max-w-md text-sm sm:text-base">
