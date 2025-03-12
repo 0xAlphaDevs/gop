@@ -23,8 +23,7 @@ Game of Pots (GOP) is a **no-loss lottery** built on **Ethena USDe**, designed f
 
 </br>
 
-## 📊 **View the GOP Pitch Deck:**
-
+📊 **View the GOP Pitch Deck:**
 👉 [Presentation Link](https://www.canva.com/design/DAGg9LkRTkk/mr9gEmlHQCZGAeZ0w17OrQ/view)
 
 </br>
