@@ -67,9 +67,23 @@ To partake in the **Game of Pots**, one must master the sacred commands of the *
 
 </br>
 
-## 🎭 Join the Battle
+## 🔗 Links & Resources
 
-Follow us on **Twitter/X** for updates and invite codes:
-👉 [twitter.com/gameofpots](https://x.com/gopdotfun)
+<div >
+  <a href="https://www.gameofpots.fun/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐%20Website-%230A74DA.svg?&style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website">
+  </a>
+  <a href="https://x.com/gopdotfun" target="_blank">
+    <img src="https://img.shields.io/badge/🐦%20X-%23181717.svg?&style=for-the-badge&logo=x&logoColor=white" alt="Twitter (X)">
+  </a>
+  <a href="https://docs.gameofpots.fun/introduction" target="_blank">
+    <img src="https://img.shields.io/badge/📜%20Docs-%235C6BC0.svg?&style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Documentation">
+  </a>
+  <a href="https://t.me/+vuy2WgghLUwyNTU1" target="_blank">
+    <img src="https://img.shields.io/badge/📢%20Telegram-%2326A5E4.svg?&style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  </a>
+</div>
+
+</br>
 
 🔥 **Prepare your gold, summon your allies, and enter the Game of Pots!** 🔥
